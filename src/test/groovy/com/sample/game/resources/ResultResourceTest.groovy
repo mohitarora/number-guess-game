@@ -27,7 +27,7 @@ class ResultResourceTest extends Specification {
         then:
             thrown(WebApplicationException)
         where:
-            number << [1,2,3,null,9,11,13]
+            number << [0,1,null,9,11,13]
     }
 
 }
