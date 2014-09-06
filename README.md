@@ -1,7 +1,7 @@
 number-guess-game
 =================
 
-A simple number guess game built using Angular and Dropwizard
+A simple number guess game built using Angular and Dropwizard and Spock
 
 Build Instructions
 ==================
