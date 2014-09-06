@@ -30,11 +30,11 @@ app.controller('GameController', function ($scope, $http, $timeout, LS) {
         }, 1000);
     };
 
-    this.guess = function () {
+    $scope.submitForm = function () {
         $http({
             method: 'GET',
             url: '/api/result',
-            params: { number: this.numGuess }
+            params: { number: $scope.game.numGuess }
         }).success(function (result) {
             $scope.game.setFlash('Congratulations you cracked it! You can play again');
             $scope.game.reset();
