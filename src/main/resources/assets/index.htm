@@ -1,19 +1,37 @@
 <!DOCTYPE html>
 <html ng-app="game">
     <head>
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+        <style>
+            body 	{ padding-top:30px; }
+        </style>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
         <script src="app.js"></script>
     </head>
     <body ng-controller="GameController as game">
-        <p>This is a simple number guessing game. Guess a Number b/w 1 and 20.</p>
-        <p>Number of tries remaining: {{ game.trialCount }}</p>
-        <form name="myForm" ng-show="game.trialCount > 0" ng-submit="submitForm(userForm.$valid)" novalidate>
-            <input type="number" ng-model="game.numGuess" min="1" max="20" required/>
-            <button type="submit" ng-disabled="myForm.$invalid">Guess</button>
-            <p>{{ game.flash }}</p>
-        </form>
-        <div ng-show="game.trialCount == 0">
-            <button ng-click="game.reset()">Reset</button>
-        </div>
+        <div class="container">
+            <div class="col-sm-8 col-sm-offset-2">
+                <!-- PAGE HEADER -->
+                <div class="page-header"><h1>This is a simple number guessing game. Guess a Number b/w 1 and 20.</h1></div>
+
+                <div class="page-header"><h2>Number of tries remaining: {{ game.trialCount }}</h2></div>
+
+                <form name="myForm" ng-show="game.trialCount > 0" ng-submit="submitForm(userForm.$valid)" novalidate>
+                    <div class="form-group">
+                        <label>Your Guess</label>
+                        <input type="number" ng-model="game.numGuess" min="1" max="20" class="form-control" required/>
+                    </div>
+
+                    <button type="submit" ng-disabled="myForm.$invalid" class="btn btn-primary">Validate</button>
+                    <div class="page-header"><h4>{{ game.flash }}</p></h4></div>
+
+                </form>
+
+                <div ng-show="game.trialCount == 0">
+                    <button ng-click="game.reset()" class="btn btn-primary">Reset</button>
+                </div>
+
+            </div><!-- col-sm-8 -->
+        </div><!-- /container -->
     </body>
 </html>
