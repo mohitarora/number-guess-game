@@ -19,7 +19,7 @@
                 <form name="myForm" ng-show="game.trialCount > 0" ng-submit="submitForm(userForm.$valid)" novalidate>
                     <div class="form-group">
                         <label>Your Guess</label>
-                        <input type="number" ng-model="game.numGuess" min="1" max="20" class="form-control" required/>
+                        <input type="number" ng-model="game.numGuess" min="1" max="20" autofocus="autofocus" class="form-control" required/>
                     </div>
 
                     <button type="submit" ng-disabled="myForm.$invalid" class="btn btn-primary">Validate</button>
