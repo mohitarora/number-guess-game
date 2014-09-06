@@ -49,11 +49,11 @@ app.controller('GameController', function ($scope, $http, $timeout, LS) {
 app.factory("LS", function ($window) {
     return {
         setData: function (val) {
-            $window.localStorage && $window.localStorage.setItem('my-storage', val);
+            $window.localStorage && $window.localStorage.setItem('guess-count', val);
             return this;
         },
         getData: function () {
-            return $window.localStorage && $window.localStorage.getItem('my-storage');
+            return $window.localStorage && $window.localStorage.getItem('guess-count');
         }
     };
 });
