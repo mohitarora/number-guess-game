@@ -9,10 +9,6 @@ public class Result {
 
     private boolean valid;
 
-    public Result() {
-        // Jackson deserialization
-    }
-
     public Result(boolean valid) {
         this.valid = valid;
     }
@@ -22,8 +18,4 @@ public class Result {
         return valid;
     }
 
-    @JsonProperty
-    public void setValid(boolean valid) {
-        this.valid = valid;
-    }
 }
