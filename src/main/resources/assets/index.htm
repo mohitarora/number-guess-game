@@ -12,5 +12,8 @@
             <button ng-click="game.guess()">Check</button>
             <p>{{ game.flash }}</p>
         </div>
+        <div ng-show="game.trialCount == 0">
+            <button ng-click="game.reset()">Reset</button>
+        </div>
     </body>
 </html>

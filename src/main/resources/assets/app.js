@@ -1,5 +1,7 @@
+//Angular Module
 var app = angular.module('game', []);
 
+//Angular Controller
 app.controller('GameController', function ($scope, $http, $timeout, LS) {
 
     this.numGuess = '';
@@ -43,7 +45,8 @@ app.controller('GameController', function ($scope, $http, $timeout, LS) {
     };
 });
 
-app.factory("LS", function ($window, $rootScope) {
+//Angular Factory for Local Storage
+app.factory("LS", function ($window) {
     return {
         setData: function (val) {
             $window.localStorage && $window.localStorage.setItem('my-storage', val);
